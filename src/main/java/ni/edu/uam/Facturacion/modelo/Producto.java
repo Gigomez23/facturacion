@@ -24,6 +24,10 @@ public class Producto {
     @TextArea // Esto es para un texto grande, se usará un área de texto o equivalente
     String observaciones;
 
+    @ManyToOne(fetch=FetchType.LAZY)
+    @DescriptionsList
+    Autor autor;
+
     @ManyToOne( // La referencia se almacena como una relación en la base de datos
             fetch=FetchType.LAZY, // La referencia se carga bajo demanda
             optional=true) // La referencia puede estar sin valor
